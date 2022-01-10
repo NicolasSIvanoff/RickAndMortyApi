@@ -10,6 +10,7 @@ import { ApiServiceService } from '../services/ApiService.service';
 export class EpisodeoComponent implements OnInit {
   getEpisodeosSuccess!: ApiEpisodeModel[];
   getEpisodeosError!: string;
+  currentUrl!: string;
 
   constructor(private serv: ApiServiceService) {}
 
@@ -21,10 +22,37 @@ export class EpisodeoComponent implements OnInit {
     this.serv.getApiEpisodeos().subscribe(
       (data) => {
         this.getEpisodeosSuccess = data;
+        this.currentUrl = 'https://rickandmortyapi.com/api/episode';
       },
       (error) => {
         this.getEpisodeosError = error;
       }
     );
+  }
+  NextPage() {
+    this.serv.getPageInfo(this.currentUrl).subscribe((pageInfo) => {
+      this.currentUrl = pageInfo.next;
+      this.serv.ButtonPageCharacter(pageInfo.next).subscribe(
+        (data) => {
+          this.getEpisodeosSuccess = data;
+        },
+        (error) => {
+          this.getEpisodeosError = error;
+        }
+      );
+    });
+  }
+  PrevPage() {
+    this.serv.getPageInfo(this.currentUrl).subscribe((pageInfo) => {
+      this.currentUrl = pageInfo.prev;
+      this.serv.ButtonPageCharacter(pageInfo.prev).subscribe(
+        (data) => {
+          this.getEpisodeosSuccess = data;
+        },
+        (error) => {
+          this.getEpisodeosError = error;
+        }
+      );
+    });
   }
 }

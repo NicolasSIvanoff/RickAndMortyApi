@@ -34,7 +34,4 @@ export class ApiServiceService {
   ButtonPageCharacter(url: string): Observable<any> {
     return this.http.get(url).pipe(pluck('results'));
   }
-  ApiPrevCharacter(url: string): Observable<any> {
-    return this.http.get(url).pipe(pluck('results'));
-  }
 }
