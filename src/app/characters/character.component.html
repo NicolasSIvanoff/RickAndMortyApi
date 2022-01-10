@@ -1,0 +1,31 @@
+<div class="title">
+  <h2>Lista de Personagens</h2>
+</div>
+<div class="container">
+  <div class="primary">
+    <div class="card mb-10" *ngFor="let character of characterSuccess">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img
+            src="{{ character.image }}"
+            class="img-fluid rounded-start"
+            alt="..."
+          />
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{ character.name }}</h5>
+            <p class="card-text fw-light">
+              <strong>Espécie:</strong> {{ character.species }}<br />
+              <strong>Visto por último:</strong> {{ character.location.name
+              }}<br />
+              <strong>Sexo:</strong> {{ character.gender }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="button mb-3" (click)="PrevPage()">Anterior</button>
+  <button class="button mb-3" (click)="NextPage()">Próximo</button>
+</div>

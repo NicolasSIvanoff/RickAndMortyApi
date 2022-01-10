@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: grey !important;
+  height: 100%;
+  margin: 0;
+}
+h2 {
+  background-color: #141416d2;
+  border-radius: 50px;
+  width: 100%;
+  max-width: 500px;
+  min-height: 50px;
+  color: #fff;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container {
+  //config do fundo de todas paginas
+  background-size: 100%; //Utilizar 100% da imagem
+  background-repeat: no-repeat; //nao repetir imagem
+  background-attachment: fixed; //imagem fixa
+  background-position: center; //imagem centralizada
+  //--------------------------------------------------------
+  border: 1px solid rgb(255, 255, 255); //Borda da div
+  border-radius: 10px; //Deixar pontas arredondadas
+  min-width: 95%; //Aumentar laterias da div Container
+  display: flex; //Permite utilizar comandos flex que colocarei logo abaixo
+  flex-direction: row; //Determina como os itens sao alinhados no container, horizontal ou vertical
+  flex-wrap: wrap; //Quebrar items para a linha seguinte
+  justify-content: space-between; //Definir alinhamento dos itens que ficarao na linha, No README tem todos
+  align-items: stretch; //Define o comportamento dos elementos, o alinhamento deles de cordo com os outros
+}
+.title {
+  padding-top: 8px;
+  border-radius: 10px; //Deixar pontas arredondadas
+  display: flex; //Permite utilizar comandos flex que colocarei logo abaixo
+  flex-direction: row; //Determina como os itens sao alinhados no container, horizontal ou vertical
+  flex-wrap: wrap; //Quebrar items para a linha seguinte
+  justify-content: space-evenly; //Definir alinhamento dos itens que ficarao na linha, No README tem todos
+  align-items: stretch; //Define o comportamento dos elementos, o alinhamento deles de cordo com os outros
+}
+.card {
+  margin-bottom: 15px;
+  margin-left: 3px;
+  border-radius: 5px;
+  box-shadow: 7px 7px 13px 0px rgba(14, 0, 0, 0.22);
+  padding: 10px;
+  width: 33%;
+  min-width: 250px;
+  list-style: none;
+  background-color: rgba(255, 250, 250, 0.75) !important;
+  border: 1px solid black !important;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: 95%;
+}
+.primary {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  padding: 10px;
+  flex-flow: row wrap;
+  align-items: stretch;
+}
+button {
+  height: 40px;
+  width: 20%;
+  border: 2px solid black;
+  border-radius: 10px !important;
+  background-color: rgb(76, 76, 77);
+  margin: 50px;
+  color: white;
+}

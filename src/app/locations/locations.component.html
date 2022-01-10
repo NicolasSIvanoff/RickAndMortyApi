@@ -1,0 +1,28 @@
+<div class="title">
+  <h2>Lista de Lugares</h2>
+</div>
+
+<div class="container">
+  <div class="primary">
+    <div class="card" *ngFor="let locations of getLocationSuccess">
+      <div class="row g-0">
+        <div class="col-md-10">
+          <h5 class="card-title">{{ locations.name }}</h5>
+          <p class="card-text">
+            <li><b>Id: </b>{{ locations.id }}</li>
+            <li><b>Tipo: </b>{{ locations.type }}</li>
+            <li><b>Dimensão: </b>{{ locations.dimension }}</li>
+            <li class="link">
+              <b>Localização da {{ locations.dimension }}: </b
+              ><a [href]="locations.url"> {{ locations.url }}</a>
+            </li>
+            <li>
+              <b>Data de Criação: </b
+              >{{ locations.created | date: "dd/MM/yyyy" }}
+            </li>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

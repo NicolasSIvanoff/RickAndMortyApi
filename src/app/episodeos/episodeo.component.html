@@ -1,0 +1,24 @@
+<div class="title">
+  <h2>Lista de Episódios</h2>
+</div>
+<div class="container">
+  <div class="primary">
+    <div class="card" *ngFor="let episodeos of getEpisodeosSuccess">
+      <div class="row g-0">
+        <div class="col-md-10">
+          <h5 class="card-title">{{ episodeos.name }}</h5>
+          <p class="card-text">
+            <li><b>Id: </b>{{ episodeos.id }}</li>
+            <li><b>Data de lançamento: </b>{{ episodeos.air_date }}</li>
+            <li><b>Número do Ep:</b>{{ episodeos.episode }}</li>
+            <li>
+              <b>Link do Ep: </b
+              ><a [href]="episodeos.url">{{ episodeos.url }}</a>
+            </li>
+            <li><b>Id:</b>{{ episodeos.id }}</li>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
